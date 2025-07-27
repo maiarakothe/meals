@@ -1,14 +1,6 @@
-enum Complexity {
-  Simple,
-  Medium,
-  Difficult,
-}
+enum Complexity { Simple, Medium, Difficult }
 
-enum Cost {
-  Cheap,
-  Fair,
-  Expensive,
-}
+enum Cost { Cheap, Fair, Expensive }
 
 class Meal {
   final String id;
@@ -25,7 +17,6 @@ class Meal {
   final Complexity complexity;
   final Cost cost;
 
-
   const Meal({
     required this.id,
     required this.categories,
@@ -41,4 +32,30 @@ class Meal {
     required this.complexity,
     required this.cost,
   });
+
+  String get ComplexityText {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simples';
+      case Complexity.Medium:
+        return 'Normal';
+      case Complexity.Difficult:
+        return 'Difícil';
+      default:
+        return 'Desconhecida';
+    }
+  }
+
+  String get CostText {
+    switch (cost) {
+      case Cost.Cheap:
+        return 'Barato';
+      case Cost.Fair:
+        return 'Justo';
+      case Cost.Expensive:
+        return 'Caro';
+      default:
+        return 'Desconhecido';
+    }
+  }
 }
