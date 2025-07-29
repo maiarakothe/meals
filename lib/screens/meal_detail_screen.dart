@@ -64,9 +64,7 @@ class MealDetailScreen extends StatelessWidget {
                   return Column(
                     children: [
                       ListTile(
-                        leading: CircleAvatar(
-                          child: Text('${index + 1}'),
-                        ),
+                        leading: CircleAvatar(child: Text('${index + 1}')),
                         title: Text(meal.steps[index]),
                       ),
                       Divider(),
@@ -77,6 +75,12 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.star),
+        onPressed: () {
+          Navigator.of(context).pop(meal.title);
+        },
       ),
     );
   }
